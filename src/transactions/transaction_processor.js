@@ -25,6 +25,7 @@ function processTransactions(transActions) {
 }
 
 function sortByAmountThenName(txCount) {
+  /*
   let sortedKeys = Object.keys(txCount).sort(function sortingFunction(
     itemOne,
     itemTwo
@@ -35,13 +36,17 @@ function sortByAmountThenName(txCount) {
       -(itemOne < itemTwo)
     );
   });
-
+      
   let sortedResults = {};
   for (let objectKey of sortedKeys) {
     sortedResults[objectKey] = txCount[objectKey];
   }
 
   return sortedResults;
+  */
+  return Object.entries(txCount)
+    .sort((cur,next) => next[1]>cur[1] && next[0]>cur[0]? 1:-1)
+    .reduce((arr, [key, val]) => ({ ...arr, [key]: val }), {})
 }
 
 module.exports = processTransactions;
