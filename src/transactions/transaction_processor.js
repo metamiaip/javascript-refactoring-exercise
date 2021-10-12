@@ -12,7 +12,7 @@ function processTransactions(transActions) {
 
     const numberOfTransactions = transActions.length;
 
-    for(var i = 0; i < numberOfTransactions; i++) {
+    for(let i = 0; i < numberOfTransactions; i++) {
         const transaction = transActions[i];
         txCount[transaction] ? txCount[transaction] += 1 : txCount[transaction] = 1;
     }
