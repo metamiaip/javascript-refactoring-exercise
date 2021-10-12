@@ -1,5 +1,3 @@
-var txr = [];
-
 function processTransactions(transActions) {
 
     txr = [];
