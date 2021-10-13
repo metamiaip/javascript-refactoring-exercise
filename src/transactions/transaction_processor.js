@@ -19,7 +19,7 @@ function processTransactions(transActions) {
   return txr;
 }
 
-function sortByAmountThenName(txCount) {
+const sortByAmountThenName=(txCount)=> {
   return Object.entries(txCount)
     .sort((cur, next) => (next[1] > cur[1] && next[0] > cur[0] ? 1 : -1))
     .reduce((arr, [key, val]) => ({ ...arr, [key]: val }), {});
