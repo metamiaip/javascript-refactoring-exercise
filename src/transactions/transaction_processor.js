@@ -8,11 +8,9 @@ const processTransactions = (transActions) => {
     return accumulator;
   }, {});
 
-  /*
-    .entries - Convert from object to array
-    .sort - organize the array
-    .map - the array according to the requested information
-  */
+  // .entries - Convert from object to array
+  // .sort - to order the array
+  // .map - the array according to the requested information
   return Object.entries(txCount)
     .sort((cur, next) => (next[1] > cur[1] && next[0] > cur[0] ? 1 : -1))
     .map((item) => `${item[0]} ${item[1]}`);
