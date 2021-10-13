@@ -1,28 +1,22 @@
 const processTransactions = (transActions) => {
   txr = [];
 
-  if (!transActions || typeof transActions == "undefined")
-    throw new Error("Undefined collection of transactions");
+  if (!transActions || typeof transActions == "undefined") throw new Error("Undefined collection of transactions");
 
+  //count the num of occurences exists in the array
   let txCount = transActions.reduce((acc, item) => {
-    !acc[item] ? (acc[item] = 1) : acc[item]++;
+    !acc[item] ? acc[item] = 1 : acc[item]++;
     return acc;
   }, {});
 
-  txCount = sortByAmountThenName(txCount);
-
-  // Place them back in array for returning
-  Object.keys(txCount).forEach((key, index) => {
-    txr[index] = `${key} ${txCount[key]}`;
-  });
-
-  return txr;
-}
-
-const sortByAmountThenName = (txCount) => {
+  /*
+    .entries - Convert from object to array
+    .sort - organize the array
+    .map - the array according to the requested information
+  */
   return Object.entries(txCount)
     .sort((cur, next) => (next[1] > cur[1] && next[0] > cur[0] ? 1 : -1))
-    .reduce((arr, [key, val]) => ({ ...arr, [key]: val }), {});
-}
+    .map(item => `${item[0]} ${item[1]}`);
 
+}
 module.exports = processTransactions;

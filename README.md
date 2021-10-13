@@ -1,5 +1,18 @@
+
+
+
+Project executed by: ***Alberto Concovia***
+                     ***Jonathan Ip***
+                     ***Leonardo A.***
+               Date: ***10/2021***
+     Coordinated by: ***Tech Returners***
+
+
+
+
+
 ### 🗒️  Introduction
-LEO
+
 Its time to put those modern JavaScript skills in to practice 🙌
 
 We've created an existing JavaScript code base for you. 
