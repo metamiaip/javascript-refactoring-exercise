@@ -1,5 +1,4 @@
 const processTransactions = (transActions) => {
-  txr = [];
 
   if (!transActions || typeof transActions == "undefined") throw new Error("Undefined collection of transactions");
 
