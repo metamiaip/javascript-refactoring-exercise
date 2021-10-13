@@ -3,9 +3,9 @@ const processTransactions = (transActions) => {
     throw new Error("Undefined collection of transactions");
 
   //count the num of occurences exists in the array
-  const txCount = transActions.reduce((acc, item) => {
-    !acc[item] ? (acc[item] = 1) : acc[item]++;
-    return acc;
+  const txCount = transActions.reduce((accumulator, item) => {
+    !accumulator[item] ? (accumulator[item] = 1) : accumulator[item]++;
+    return accumulator;
   }, {});
 
   /*
