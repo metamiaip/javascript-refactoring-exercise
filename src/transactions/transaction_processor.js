@@ -12,7 +12,7 @@ const processTransactions = (transActions) => {
   // .sort - to order the array
   // .map - the array according to the requested information
   return Object.entries(txCount)
-    .sort((cur, next) => (next[1] > cur[1] && next[0] > cur[0] ? 1 : -1))
+    .sort((current, next) => (next[1] > current[1] && next[0] > current[0] ? 1 : -1))
     .map((item) => `${item[0]} ${item[1]}`);
 };
 module.exports = processTransactions;
