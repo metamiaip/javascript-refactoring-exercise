@@ -1,10 +1,10 @@
 const processTransactions = (transActions) => {
-
-  if (!transActions || typeof transActions == "undefined") throw new Error("Undefined collection of transactions");
+  if (!transActions || typeof transActions == "undefined")
+    throw new Error("Undefined collection of transactions");
 
   //count the num of occurences exists in the array
-  let txCount = transActions.reduce((acc, item) => {
-    !acc[item] ? acc[item] = 1 : acc[item]++;
+  const txCount = transActions.reduce((acc, item) => {
+    !acc[item] ? (acc[item] = 1) : acc[item]++;
     return acc;
   }, {});
 
@@ -15,7 +15,6 @@ const processTransactions = (transActions) => {
   */
   return Object.entries(txCount)
     .sort((cur, next) => (next[1] > cur[1] && next[0] > cur[0] ? 1 : -1))
-    .map(item => `${item[0]} ${item[1]}`);
-
-}
+    .map((item) => `${item[0]} ${item[1]}`);
+};
 module.exports = processTransactions;
