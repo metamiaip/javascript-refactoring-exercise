@@ -12,7 +12,7 @@ function processTransactions(transActions) {
   txCount = sortByAmountThenName(txCount);
 
   // Place them back in array for returning
-  Object.keys(txCount).forEach(function (key, index) {
+  Object.keys(txCount).forEach((key, index)=> {
     txr[index] = `${key} ${txCount[key]}`;
   });
 
