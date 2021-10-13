@@ -8,11 +8,9 @@ const processTransactions = (transActions) => {
     return accumulator;
   }, {});
 
-  // .entries - Convert from object to array
-  // .sort - to order the array
-  // .map - the array according to the requested information
-  return Object.entries(txCount)
-    .sort((current, next) => (next[1] > current[1] && next[0] > current[0] ? 1 : -1))
-    .map((item) => `${item[0]} ${item[1]}`);
+  return Object.entries(txCount)   // .entries - Convert from object to array
+    .sort((current, next) => next[1] > current[1] && next[0] > current[0] ? 1 : -1 )   // .sort - to order the array
+    .map((item) => `${item[0]} ${item[1]}`);   // .map - format the array according to the requested information
 };
+
 module.exports = processTransactions;
