@@ -3,16 +3,11 @@ function processTransactions(transActions) {
 
   if (!transActions) throw new Error("Undefined collection of transactions");
 
-  let txCount = {};
+  let txCount = transActions.reduce((acc, item) => {
+    !acc[item] ? acc[item] = 1 : acc[item]++;
+    return acc;
+  }, {});
 
-  const numberOfTransactions = transActions.length;
-
-  for (let i = 0; i < numberOfTransactions; i++) {
-    const transaction = transActions[i];
-    txCount[transaction]
-      ? (txCount[transaction] += 1)
-      : (txCount[transaction] = 1);
-  }
 
   txCount = sortByAmountThenName(txCount);
 
@@ -25,28 +20,11 @@ function processTransactions(transActions) {
 }
 
 function sortByAmountThenName(txCount) {
-  /*
-  let sortedKeys = Object.keys(txCount).sort(function sortingFunction(
-    itemOne,
-    itemTwo
-  ) {
-    return (
-      txCount[itemTwo] - txCount[itemOne] ||
-      itemOne > itemTwo ||
-      -(itemOne < itemTwo)
-    );
-  });
-      
-  let sortedResults = {};
-  for (let objectKey of sortedKeys) {
-    sortedResults[objectKey] = txCount[objectKey];
-  }
 
-  return sortedResults;
-  */
   return Object.entries(txCount)
-    .sort((cur,next) => next[1]>cur[1] && next[0]>cur[0]? 1:-1)
+    .sort((cur, next) => next[1] > cur[1] && next[0] > cur[0] ? 1 : -1)
     .reduce((arr, [key, val]) => ({ ...arr, [key]: val }), {})
+
 }
 
 module.exports = processTransactions;
