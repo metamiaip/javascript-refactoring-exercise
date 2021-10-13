@@ -1,4 +1,4 @@
-function processTransactions(transActions) {
+const processTransactions = (transActions) => {
   txr = [];
 
   if (!transActions || typeof transActions == "undefined")
@@ -12,14 +12,14 @@ function processTransactions(transActions) {
   txCount = sortByAmountThenName(txCount);
 
   // Place them back in array for returning
-  Object.keys(txCount).forEach((key, index)=> {
+  Object.keys(txCount).forEach((key, index) => {
     txr[index] = `${key} ${txCount[key]}`;
   });
 
   return txr;
 }
 
-const sortByAmountThenName=(txCount)=> {
+const sortByAmountThenName = (txCount) => {
   return Object.entries(txCount)
     .sort((cur, next) => (next[1] > cur[1] && next[0] > cur[0] ? 1 : -1))
     .reduce((arr, [key, val]) => ({ ...arr, [key]: val }), {});
