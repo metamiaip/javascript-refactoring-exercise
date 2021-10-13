@@ -1,11 +1,11 @@
 
+<p>Project executed by: <b>Alberto Concovia, Jonathan Ip and Leonardo A.</b></p>
+             <p>Date: <b>10/2021</b></p>
+       <p>Coordinated by: <b>Tech Returners</b></p>
 
+<br>
+<br>
 
-Project executed by: ***Alberto Concovia***
-                     ***Jonathan Ip***
-                     ***Leonardo A.***
-               Date: ***10/2021***
-     Coordinated by: ***Tech Returners***
 
 
 
