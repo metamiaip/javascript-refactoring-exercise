@@ -1,5 +1,5 @@
 const processTransactions = (transActions) => {
-  if (!transActions || typeof transActions == "undefined")
+  if (!transActions || transActions === undefined)
     throw new Error("Undefined collection of transactions");
 
   //count the num of occurences exists in the array
